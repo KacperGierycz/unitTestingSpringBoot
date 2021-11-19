@@ -6,23 +6,31 @@ import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import unittesting.unittesting.busines.SomeBusinessImpl;
 import unittesting.unittesting.data.SomeDataService;
 
 
 
-
+@RunWith(MockitoJUnitRunner.class)
 public class SomeBusinesMockTest {
 	
-	SomeBusinessImpl business= new SomeBusinessImpl();
-	SomeDataService dataServiceMock = mock(SomeDataService.class);
+	@InjectMocks
+	SomeBusinessImpl business;
 	
-	@Before
-	public void before() {
-		business.setSomeDataService(dataServiceMock);
-
-	}
+	@Mock
+	SomeDataService dataServiceMock;
+	
+//	don't need if using above 
+//	@Before
+//	public void before() {
+//		business.setSomeDataService(dataServiceMock);
+//
+//	}
 
 	@Test
 	public void calculateSumUsingDataService_basic() {
