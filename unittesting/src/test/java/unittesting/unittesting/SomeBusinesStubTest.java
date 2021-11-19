@@ -33,7 +33,7 @@ class SomeDataServiceStub_oneValue implements SomeDataService{
 	public int[] retrieveAllData() {
 		// TODO Auto-generated method stub
 		return new int[] {5};
-	}
+	}	
 }
 
 public class SomeBusinesStubTest {
