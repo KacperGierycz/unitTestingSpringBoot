@@ -1,5 +1,9 @@
 package unittesting.unittesting.controller;
 
+import static org.junit.Assert.assertEquals;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +31,13 @@ public class HelloWorldControllerTest {
 				.get("/hello-world")
 				.accept(MediaType.APPLICATION_JSON);
 		
-		MvcResult result = mockMvc.perform(request).andReturn();
+		MvcResult result = mockMvc.perform(request)
+				.andExpect(status().isOk())
+				.andExpect(content().string("Hello World"))
+				.andReturn();
 		
-		
-		
+		//assertEquals("Hello World",result.getResponse().getContentAsString());
+		//getContentAsString());toString());
 		//verify "Hello World"
 		
 		
