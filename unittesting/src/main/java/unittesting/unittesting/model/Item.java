@@ -23,6 +23,10 @@ public class Item {
 	public void setValue(int value) {
 		this.value = value;
 	}
+	
+	protected Item() {
+		
+	}
 
 	public Item(int id,String name, int price, int quantity) {
 		this.id=id;

@@ -3,6 +3,9 @@ package unittesting.unittesting.controller;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.util.Arrays;
+
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
 import org.junit.Test;
@@ -78,7 +81,30 @@ public class ItemControllerTest {
 	
 	}
 	
+	@Test
+	public void RetrieveAllItems_basic() throws Exception {
+		
+		when(businessService.retrieveAllItems()).thenReturn(
+				Arrays.asList(new Item(2,"Item2",10,10),
+				new Item(3,"Item3",20,20)));
+		
+			
+		//call "/hello-world"
+		RequestBuilder request=MockMvcRequestBuilders
+				.get("/all-items-from-database")
+				.accept(MediaType.APPLICATION_JSON);
+		
+		MvcResult result = mockMvc.perform(request)
+				.andExpect(status().isOk())
+				.andExpect(content().json(
+						"[{\"id\":2 ,\"name\":\"Item2\",\"price\":10,\"quantity\":10},"
+						+ "{id:3,name:Item3,price:20,quantity:20}]"))
+				.andReturn();
+		
+	//	JSONAssert.assertEquals(expected, actual, strict);
+
 	
+	}
 	
 	
 	
