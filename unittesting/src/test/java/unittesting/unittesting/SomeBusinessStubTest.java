@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import unittesting.unittesting.busines.SomeBusinessImpl;
+import unittesting.unittesting.business.SomeBusinessImpl;
 import unittesting.unittesting.data.SomeDataService;
 
 
@@ -36,7 +36,7 @@ class SomeDataServiceStub_oneValue implements SomeDataService{
 	}	
 }
 
-public class SomeBusinesStubTest {
+public class SomeBusinessStubTest {
 
 	@Test
 	public void calculateSumUsingDataService_basic() {

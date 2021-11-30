@@ -1,4 +1,4 @@
-package unittesting.unittesting.busines;
+package unittesting.unittesting.business;
 
 import unittesting.unittesting.data.SomeDataService;
 

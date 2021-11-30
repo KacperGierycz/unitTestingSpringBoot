@@ -11,13 +11,13 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import unittesting.unittesting.busines.SomeBusinessImpl;
+import unittesting.unittesting.business.SomeBusinessImpl;
 import unittesting.unittesting.data.SomeDataService;
 
 
 
 @RunWith(MockitoJUnitRunner.class)
-public class SomeBusinesMockTest {
+public class SomeBusinessMockTest {
 	
 	@InjectMocks
 	SomeBusinessImpl business;

@@ -5,10 +5,10 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import unittesting.unittesting.busines.SomeBusinessImpl;
+import unittesting.unittesting.business.SomeBusinessImpl;
 
 
-public class SomeBusinesTest {
+public class SomeBusinessTest {
 
 	@Test
 	public void calculate() {
