@@ -1,5 +1,7 @@
 package unittesting.unittesting.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +13,7 @@ import unittesting.unittesting.model.Item;
 public class ItemController {
 	
 	@Autowired
-	private ItemBusinessService businesService;
+	private ItemBusinessService businessService;
 	
 	@GetMapping("/dummy-item")
 	public Item dumyItem() {
@@ -20,10 +22,13 @@ public class ItemController {
 	
 	@GetMapping("/item-from-business-service")
 	public Item itemFromBusinessService() {
-		return businesService.retrieveHardcodedItem();
+		return businessService.retrieveHardcodedItem();
 	}
 	
-	
+	@GetMapping("/all-items-from-database")
+	public List<Item> retrieceAllItems(){
+		return businessService.retrieveAllItems();
+	}
 	
 	
 	
