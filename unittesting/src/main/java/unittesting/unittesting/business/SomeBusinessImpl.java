@@ -21,8 +21,8 @@ public class SomeBusinessImpl {
 		
 		return Arrays.stream(data).reduce(Integer::sum).orElse(0);
 		
-//		OptionalInt number= Arrays.stream(data).reduce(Integer::sum);
-//		return number.orElse(0);
+
+
 		
 //		int sum=0;
 //		for(int value:data) {

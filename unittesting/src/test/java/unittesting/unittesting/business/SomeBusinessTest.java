@@ -1,4 +1,4 @@
-package unittesting.unittesting;
+package unittesting.unittesting.business;
 
 import static org.junit.Assert.*;
 
